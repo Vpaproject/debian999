@@ -34,8 +34,6 @@ cat jcameron-key.asc | apt-key add -;rm jcameron-key.asc
 # update
 apt-get update; apt-get -y upgrade;
 
-# install webserver
-apt-get -y install nginx php5-fpm php5-cli
 
 # install essential package
 apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs openvpn vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip unrar rsyslog debsums rkhunter 
@@ -120,7 +118,6 @@ fi
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
-
 
 # Install Mrtg
 wget -O /etc/snmp/snmpd.conf "http://vpn989.com/script/snmpd.conf"
